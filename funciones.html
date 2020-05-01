@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Exercises - Funciones</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            /*grid-template: 300px 100px 100px / repeat(4,1fr);*/
+            /*grid-template: 300px 100px 100px / repeat(4,minmax(200px,1fr));*/
+            grid-template: 300px 100px 100px / minmax(200px, 1fr) 1fr 1fr;
+            grid-gap: 30px;
+        }
+
+        .item{
+            background: lightskyblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+        .item:nth-of-type(4){
+            background: blue;
+            overflow: auto;
+            display: grid;
+            grid-template: 50px 50px 50px / 200px 200px 200px;
+        }
+
+        .item .item{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">Celda #1</div>
+        <div class="item">Celda #2</div>
+        <div class="item">Celda #3</div>
+        <div class="item">
+            <div class="item">SubCelda #1</div>
+            <div class="item">SubCelda #2</div>
+            <div class="item">SubCelda #3</div>
+            <div class="item">SubCelda #4</div>
+            <div class="item">SubCelda #5</div>
+        </div>
+        <div class="item">Celda #5</div>
+        <div class="item">Celda #6</div>
+        <div class="item">Celda #7</div>
+        <div class="item">Celda #8</div>
+        <div class="item">Celda #9</div>
+        <div class="item">Celda #10</div>
+        <div class="item">Celda #11</div>
+        <div class="item">Celda #12</div>
+    </section>
+</body>
+</html>
