@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Exercises - Column Size</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: 10px;
+            height: 100vh;
+        }
+
+        .item{
+            background: lightskyblue;
+            border: 1px solid red;
+        }
+        .item:nth-of-type(1){
+            background: blue;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .item:nth-of-type(7){
+            grid-column: 2 / 4;
+        }
+        .item:nth-of-type(8){
+            /*grid-column: 1 / span 2;*/
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">Contenido #1</div>
+        <div class="item">Contenido #2</div>
+        <div class="item">Contenido #3</div>
+        <div class="item">Contenido #4</div>
+        <div class="item">Contenido #5</div>
+        <div class="item">Contenido #6</div>
+        <div class="item">Contenido #7</div>
+        <div class="item">Contenido #8</div>
+        <div class="item">Contenido #9</div>
+        <div class="item">Contenido #10</div>
+        <div class="item">Contenido #11</div>
+        <div class="item">Contenido #12</div>
+    </section>
+</body>
+</html>
